@@ -1,1 +1,44 @@
-<h1>Esto es el footer</h1>
+---
+import Logo from "@icons/Logo.astro";
+import { navElements } from "../variables/navElements";
+import { fontAlata } from "../variables/FontVariables";
+import IconInstagram from "@icons/SocialMedia/IconInstagram.astro";
+import IconPinterest from "@icons/SocialMedia/IconPinterest.astro";
+import IconTwitter from "@icons/SocialMedia/IconTwitter.astro";
+import IconFacebook from "@icons/SocialMedia/IconFacebook.astro";
+---
+
+<footer
+  class="bg-black flex flex-col xl:flex-row xl:justify-between items-center justify-center text-white py-16 xl:px-32 xl:py-8 gap-5 mt-auto"
+>
+  <div>
+    <Logo color="#fff" />
+    <nav class="mt-5">
+      <ul
+        class={`flex flex-col xl:flex-row gap-5 text-white items-center justify-center ${fontAlata}`}
+      >
+        {
+          navElements.map((navElement) => {
+            return (
+              <li>
+                <a href={navElement.href}>{navElement.name}</a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </nav>
+  </div>
+
+  <div class="flex xl:items-end flex-col gap-5 sm:items-center">
+    <div class="flex gap-5 mt-8 items-center">
+      <IconFacebook />
+      <IconTwitter />
+      <IconPinterest />
+      <IconInstagram />
+    </div>
+    <p class={`text-Very-Dark-Gray ${fontAlata}`}>
+      © 2021 Loopstudios. All rights reserved.
+    </p>
+  </div>
+</footer>

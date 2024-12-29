@@ -15,6 +15,9 @@ export default {
         AlataF: "Alata",
         JosefinF: ['"Josefin Sans"'],
       },
+      screens: {
+        sm: "360px",
+      },
     },
   },
   plugins: [],

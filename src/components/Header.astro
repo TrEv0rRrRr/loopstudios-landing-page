@@ -1,21 +1,12 @@
 ---
 import Logo from "@icons/Logo.astro";
 import IconHamburger from "@icons/IconHamburger.astro";
-import { fontAlata, fontJosefin } from "../FontVariables/fontVariables";
-
-const navElements = [
-  { name: "About", href: "#" },
-  { name: "Carrers", href: "#" },
-  { name: "Events", href: "#" },
-  { name: "Products", href: "#" },
-  { name: "Support", href: "#" },
-];
-
-const hoverColor = "#ddd";
+import { fontAlata, fontJosefin } from "../variables/FontVariables";
+import { navElements } from "../variables/navElements";
 ---
 
 <header
-  class="flex px-[2rem] pt-[3rem] pb-[10rem] xl:px-[12rem] xl:pt-[3.8rem] w-[full] flex-col gap-[8.5rem]"
+  class="flex px-[2rem] pt-[3rem] pb-[10rem] xl:px-[12rem] xl:pt-[3.8rem] flex-col gap-[8.5rem] w-full mb-20"
 >
   <div class={`flex items-center justify-between ${fontAlata} `}>
     <Logo color="#fff" />
@@ -46,37 +37,13 @@ const hoverColor = "#ddd";
   </div>
 </header>
 
-<style define:vars={{ hoverColor }}>
+<style>
   header {
     background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
       url("/src/assets/images/mobile/image-hero.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-  }
-
-  a {
-    position: relative;
-  }
-
-  a:after {
-    content: "";
-    position: absolute;
-    top: 130%;
-    display: block;
-    width: 0;
-    height: 2px;
-    background-color: var(--hoverColor);
-    transition: width 0.3s;
-  }
-
-  li:hover a:after {
-    width: 100%;
-    transition: width 0.3s;
-  }
-
-  li:hover a {
-    color: var(--hoverColor);
   }
 
   @media screen and (min-width: 1280px) {

@@ -19,6 +19,12 @@
       ],
       "@icons/*": [
         "src/assets/icons/*"
+      ],
+      "@types/*": [
+        "src/types/*"
+      ],
+      "@variables/*": [
+        "src/variables/*"
       ]
     }
   }
