@@ -50,8 +50,8 @@ const hoverColor = "#ddd";
 
 <style define:vars={{ hoverColor }}>
   header {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-      url("/src/assets/images/desktop/image-hero.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+      url("/src/assets/images/mobile/image-hero.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -79,5 +79,15 @@ const hoverColor = "#ddd";
 
   li:hover a {
     color: var(--hoverColor);
+  }
+
+  @media screen and (min-width: 1280px) {
+    header {
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url("/src/assets/images/desktop/image-hero.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
   }
 </style>
