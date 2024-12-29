@@ -1,1 +1,33 @@
-<h1>Esto es el main</h1>
+---
+import { fontAlata, fontJosefin } from "../FontVariables/fontVariables";
+---
+
+<main class="flex flex-col px-8 items-center justify-center gap-24">
+  <section class="flex flex-col gap-10">
+    <picture>
+      <source
+        media="(min-width: 1280px)"
+        srcset="/src/assets/images/desktop/image-interactive.jpg"
+      />
+      <img src="/src/assets/images/mobile/image-interactive.jpg" alt="" />
+    </picture>
+    <article class="text-center flex flex-col gap-4 px-4">
+      <h1
+        class=`text-[2.1rem] ${fontJosefin} text-black leading-[1] text-balance`
+      >
+        THE LEADER IN INTERACTIVE VR
+      </h1>
+      <p class=`${fontAlata} text-Dark-Gray text-balance leading-[1.7]`>
+        Founded in 2011, Loopstudios has been producing world-class virtual
+        reality projects for some of the best companies around the globe. Our
+        award-winning creations have transformed businesses through digital
+        experiences that bind to their brand.
+      </p>
+    </article>
+  </section>
+
+  <section>
+    <h1 class=`text-3xl ${fontJosefin} text-black`>OUR CREATIONS</h1>
+    <article></article>
+  </section>
+</main>

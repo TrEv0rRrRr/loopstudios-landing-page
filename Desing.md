@@ -1,13 +1,3 @@
-## HEADER
-
-About
-Careers
-Events
-Products
-Support
-
-Immersive experiences that deliver
-
 ## MAIN
 
 The leader in interactive VR
