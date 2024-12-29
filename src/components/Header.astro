@@ -1,0 +1,83 @@
+---
+import Logo from "@icons/Logo.astro";
+import IconHamburger from "@icons/IconHamburger.astro";
+
+const navElements = [
+  { name: "About", href: "#" },
+  { name: "Carrers", href: "#" },
+  { name: "Events", href: "#" },
+  { name: "Products", href: "#" },
+  { name: "Support", href: "#" },
+];
+
+const fontAlata = "font-AlataF font-WeightAlata";
+const fontJosefin = "font-JosefinF font-WeightJosefin";
+
+const hoverColor = "#ddd";
+---
+
+<header
+  class="flex px-[2rem] pt-[3rem] pb-[10rem] xl:px-[12rem] xl:pt-[3.8rem] w-[full] flex-col gap-[8.5rem]"
+>
+  <div class=`flex items-center justify-between ${fontAlata} `>
+    <Logo color="#fff" />
+    <nav>
+      <IconHamburger />
+      <ul class="hidden xl:flex gap-12 text-white">
+        {
+          navElements.map((navElement) => {
+            return (
+              <li>
+                <a href={navElement.href}>{navElement.name}</a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </nav>
+  </div>
+
+  <div
+    class="text-white border-2 py-9 xl:px-8 xl:py-8 xl:w-[780px] flex justify-center xl:self-start md:w-min md:px-0"
+  >
+    <p
+      class=`text-[2.5rem] leading-[1] xl:text-[5rem] xl:leading-[1.1] uppercase text-balance tracking-wide ${fontJosefin}  px-[4rem] xl:px-0 md:px-[2rem]`
+    >
+      Immersive experiences that deliver
+    </p>
+  </div>
+</header>
+
+<style define:vars={{ hoverColor }}>
+  header {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url("/src/assets/images/desktop/image-hero.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  a {
+    position: relative;
+  }
+
+  a:after {
+    content: "";
+    position: absolute;
+    top: 130%;
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: var(--hoverColor);
+    transition: width 0.3s;
+  }
+
+  li:hover a:after {
+    width: 100%;
+    transition: width 0.3s;
+  }
+
+  li:hover a {
+    color: var(--hoverColor);
+  }
+</style>
