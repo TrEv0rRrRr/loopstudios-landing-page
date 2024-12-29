@@ -40,6 +40,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github](https://github.com/TrEv0rRrRr/loopstudios-landing-page)
+- Web page URL: [Web page](https://loopstudios-landing-page-trevor.netlify.app)
 
 ## My process
 
