@@ -14,7 +14,6 @@ This is a solution to the [Loopstudios landing page challenge on Frontend Mentor
     - [Built with](#built-with)
     - [Useful resources](#useful-resources)
   - [Author](#author)
-  - [Acknowledgments](#acknowledgments)
 
 **Note: Delete this note and update the table of contents based on what sections you keep.**
 
@@ -62,5 +61,3 @@ Users should be able to:
 ## Author
 
 - Frontend Mentor - [@TrEv0rRrRr](https://www.frontendmentor.io/profile/TrEv0rRrRr)
-
-## Acknowledgments
