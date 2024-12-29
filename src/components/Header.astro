@@ -1,8 +1,9 @@
 ---
 import Logo from "@icons/Logo.astro";
 import IconHamburger from "@icons/IconHamburger.astro";
-import { fontAlata, fontJosefin } from "../variables/FontVariables";
-import { navElements } from "../variables/navElements";
+import IconClose from "@icons/IconClose.astro";
+import { fontAlata, fontJosefin } from "@variables/FontVariables";
+import { navElements } from "@variables/navElements";
 ---
 
 <header
@@ -11,16 +12,14 @@ import { navElements } from "../variables/navElements";
   <div class={`flex items-center justify-between ${fontAlata} `}>
     <Logo color="#fff" />
     <nav>
-      <IconHamburger />
+      <IconHamburger class="IconOpen block xl:hidden cursor-pointer" />
       <ul class="hidden xl:flex gap-12 text-white">
         {
-          navElements.map((navElement) => {
-            return (
-              <li>
-                <a href={navElement.href}>{navElement.name}</a>
-              </li>
-            );
-          })
+          navElements.map((navElement) => (
+            <li>
+              <a href={navElement.href}>{navElement.name}</a>
+            </li>
+          ))
         }
       </ul>
     </nav>
@@ -35,7 +34,46 @@ import { navElements } from "../variables/navElements";
       Immersive experiences that deliver
     </p>
   </div>
+
+  <!-- Menú hamburguesa -->
+  <nav
+    id="hamburgerMenu"
+    class="HamburgerMenu bg-black fixed inset-0 transform translate-x-full transition-transform duration-300 flex z-50"
+  >
+    <div class="flex flex-col gap-44 py-12 px-8 w-full">
+      <div class="flex items-center justify-between">
+        <Logo color="#fff" />
+        <IconClose class="IconClose cursor-pointer" />
+      </div>
+      <ul class={`flex gap-5 text-white flex-col ${fontJosefin} text-2xl`}>
+        {
+          navElements.map((navElement) => (
+            <li>
+              <a href={navElement.href}>{navElement.name.toUpperCase()}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </nav>
 </header>
+
+<script>
+  // Selecciona los elementos del DOM
+  const hamburgerMenu = document.getElementById("hamburgerMenu");
+  const openIcon = document.querySelector(".IconOpen");
+  const closeIcon = document.querySelector(".IconClose");
+
+  openIcon?.addEventListener("click", () => {
+    hamburgerMenu?.classList.remove("translate-x-full");
+    hamburgerMenu?.classList.add("translate-x-0");
+  });
+
+  closeIcon?.addEventListener("click", () => {
+    hamburgerMenu?.classList.remove("translate-x-0");
+    hamburgerMenu?.classList.add("translate-x-full");
+  });
+</script>
 
 <style>
   header {
