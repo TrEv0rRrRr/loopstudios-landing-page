@@ -1,9 +1,77 @@
 ---
 import { fontAlata, fontJosefin } from "../FontVariables/fontVariables";
+
+const OurCreations = {
+  title: "OUR CREATIONS",
+  creations: [
+    {
+      title: "DEEP\nEARTH",
+      img: {
+        mobile: "/src/assets/images/mobile/OurCreations/image-deep-earth.jpg",
+        desktop: "/src/assets/images/desktop/OurCreations/image-deep-earth.jpg",
+      },
+    },
+    {
+      title: "NIGHT\nARCADE",
+      img: {
+        mobile: "/src/assets/images/mobile/OurCreations/image-night-arcade.jpg",
+        desktop:
+          "/src/assets/images/desktop/OurCreations/image-night-arcade.jpg",
+      },
+    },
+    {
+      title: "SOCCER\nTEAM VR",
+      img: {
+        mobile: "/src/assets/images/mobile/OurCreations/image-soccer-team.jpg",
+        desktop:
+          "/src/assets/images/desktop/OurCreations/image-soccer-team.jpg",
+      },
+    },
+    {
+      title: "THE\nGRID",
+      img: {
+        mobile: "/src/assets/images/mobile/OurCreations/image-grid.jpg",
+        desktop: "/src/assets/images/desktop/OurCreations/image-grid.jpg",
+      },
+    },
+    {
+      title: "FROM UP\nABOVE VR",
+      img: {
+        mobile: "/src/assets/images/mobile/OurCreations/image-from-above.jpg",
+        desktop: "/src/assets/images/desktop/OurCreations/image-from-above.jpg",
+      },
+    },
+    {
+      title: "POCKET\nBOREALIS",
+      img: {
+        mobile:
+          "/src/assets/images/mobile/OurCreations/image-pocket-borealis.jpg",
+        desktop:
+          "/src/assets/images/desktop/OurCreations/image-pocket-borealis.jpg",
+      },
+    },
+    {
+      title: "THE\nCURIOSITY",
+      img: {
+        mobile: "/src/assets/images/mobile/OurCreations/image-curiosity.jpg",
+        desktop: "/src/assets/images/desktop/OurCreations/image-curiosity.jpg",
+      },
+    },
+    {
+      title: "MAKE IT\nFISHEYE",
+      img: {
+        mobile: "/src/assets/images/mobile/OurCreations/image-fisheye.jpg",
+        desktop: "/src/assets/images/desktop/OurCreations/image-fisheye.jpg",
+      },
+    },
+  ],
+};
+
+const { title, creations } = OurCreations;
 ---
 
-<main class="flex flex-col px-8 items-center justify-center gap-24">
-  <section class="flex flex-col gap-10">
+<main class="flex flex-col px-8 items-center justify-center gap-10">
+  <section class="flex flex-col gap-10 items-center mb-14">
     <picture>
       <source
         media="(min-width: 1280px)"
@@ -13,11 +81,11 @@ import { fontAlata, fontJosefin } from "../FontVariables/fontVariables";
     </picture>
     <article class="text-center flex flex-col gap-4 px-4">
       <h1
-        class=`text-[2.1rem] ${fontJosefin} text-black leading-[1] text-balance`
+        class={`text-[2.1rem] ${fontJosefin} text-black leading-[1] text-balance`}
       >
         THE LEADER IN INTERACTIVE VR
       </h1>
-      <p class=`${fontAlata} text-Dark-Gray text-balance leading-[1.7]`>
+      <p class={`${fontAlata} text-Dark-Gray text-balance leading-[1.7]`}>
         Founded in 2011, Loopstudios has been producing world-class virtual
         reality projects for some of the best companies around the globe. Our
         award-winning creations have transformed businesses through digital
@@ -26,8 +94,37 @@ import { fontAlata, fontJosefin } from "../FontVariables/fontVariables";
     </article>
   </section>
 
-  <section>
-    <h1 class=`text-3xl ${fontJosefin} text-black`>OUR CREATIONS</h1>
-    <article></article>
+  <section class="flex flex-col gap-6 items-center">
+    <h1 class={`text-3xl ${fontJosefin} text-black mb-8`}>{title}</h1>
+    {
+      creations.map(({ title, img }) => {
+        return (
+          <article class="relative">
+            <picture>
+              <source media="(min-width: 1280px)" srcset={img.desktop} />
+              <img src={img.mobile} alt="" />
+            </picture>
+            <div class="overlay w-[50%] h-full absolute z-1 top-0 left-0" />
+            <p
+              class={`top-[3.8rem] left-4 absolute text-white text-2xl  leading-[1.5rem] whitespace-pre-line ${fontJosefin} z-2`}
+            >
+              {title}
+            </p>
+          </article>
+        );
+      })
+    }
   </section>
+
+  <button
+    class={`${fontAlata} px-10 py-[.65rem] border-2 border-black tracking-[.30rem] flex items-center justify-center`}
+  >
+    SEE ALL
+  </button>
 </main>
+
+<style>
+  .overlay {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.65), transparent);
+  }
+</style>
