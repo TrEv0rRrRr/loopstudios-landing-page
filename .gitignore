@@ -1,6 +1,9 @@
 # build output
 dist/
 
+# Design screens
+design_screens/
+
 # generated types
 .astro/
 
