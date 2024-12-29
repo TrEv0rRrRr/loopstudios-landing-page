@@ -17,6 +17,7 @@ export default {
       },
       screens: {
         sm: "360px",
+        tablet800: "884px",
       },
     },
   },

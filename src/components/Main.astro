@@ -87,15 +87,15 @@ const { title, creations } = OurCreations;
     </picture>
 
     <article
-      class="text-center flex flex-col gap-4 px-4 xl:absolute xl:bg-white xl:bottom-[-6.2rem] 2xl:right-[14rem] xl:right-[-3rem] xl:w-[650px] xl:p-24 xl:text-start"
+      class="text-center flex flex-col gap-4 px-4 xl:absolute xl:bg-white xl:bottom-[-6.2rem] 2xl:right-[14rem] xl:right-[-3rem] xl:w-[650px] xl:p-24 xl:text-start tablet800:px-[5.6rem]"
     >
       <h1
-        class={`text-[2.1rem] ${fontJosefin} text-black leading-[1] text-balance xl:text-[2.8rem]`}
+        class={`text-[2.1rem] ${fontJosefin} text-black leading-[1] text-balance xl:text-[2.8rem] md:text-[2.9rem]`}
       >
         THE LEADER IN INTERACTIVE VR
       </h1>
       <p
-        class={`${fontAlata} text-Dark-Gray text-balance leading-[1.7] xl:text-[.9rem]`}
+        class={`${fontAlata} text-Dark-Gray text-balance leading-[1.7] xl:text-[.9rem] md:text-[1.3rem] tablet800:text-[1.2rem]`}
       >
         Founded in 2011, Loopstudios has been producing world-class virtual
         reality projects for some of the best companies around the globe. Our
@@ -118,11 +118,13 @@ const { title, creations } = OurCreations;
     </button>
   </div>
 
-  <h1 class={`block text-[2.1rem] ${fontJosefin} text-black xl:hidden`}>
+  <h1
+    class={`block text-[2.1rem] ${fontJosefin} text-black xl:hidden md:text-[2.6rem] tablet800:text-[2.9rem]`}
+  >
     {title}
   </h1>
 
-  <section class="ImageContainer flex flex-col items-center gap-6">
+  <section class="ImageContainer flex flex-col items-center gap-6 md:gap-8">
     {
       creations.map(({ title, img }) => {
         return (
@@ -131,9 +133,9 @@ const { title, creations } = OurCreations;
               <source media="(min-width: 1280px)" srcset={img.desktop} />
               <img src={img.mobile} alt="" />
             </picture>
-            <div class="overlayP w-1/2 h-full absolute z-10 top-0 left-0" />
+            <div class="overlayP sm:w-1/2 sm:h-full absolute z-10 top-0 left-0 bg-gradient-to-r from-black/65 to-transparent xl:bg-gradient-to-t xl:h-1/2 xl:w-full xl:top-[14rem]" />
             <p
-              class={`top-[3.5rem] left-4 absolute text-white text-2xl  leading-[1.5rem] whitespace-pre-line ${fontJosefin} z-30`}
+              class={`sm:top-[3.5rem] sm:left-4 absolute text-white text-2xl  leading-[1.5rem] whitespace-pre-line ${fontJosefin} z-30 xl:text-3xl xl:top-[22rem] xl:left-[20%] md:top-[7rem] md:text-[2.5rem] md:left-10 md:leading-[2.5rem]`}
             >
               {title}
             </p>
@@ -152,10 +154,6 @@ const { title, creations } = OurCreations;
 </main>
 
 <style>
-  .overlayP {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.65), transparent);
-  }
-
   .ImageContainerArticle:hover .overlayA {
     opacity: 0.7;
   }
